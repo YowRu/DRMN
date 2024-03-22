@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Atomic+Age&family=Inter:wght@100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Moon+Dance&family=Noto+Sans+TC:wght@300&family=Noto+Serif+TC&family=Playfair+Display:wght@400;700&display=swap');
 
+
 * {
     margin: 0;
     padding: 0;
@@ -27,13 +28,13 @@
     font-size: 28px;
     color: #fff;
     margin-bottom: 10px;
+    font-family: 'Moon Dance';
+    font-size: 3rem;
 }
 
 .headerCover .quote .char {
     display: inline-block;
     letter-spacing: 2px;
-    font-family: 'Moon Dance';
-    font-size: 3rem;
     font-weight: bolder;
     opacity: 0;
 }
@@ -376,7 +377,7 @@ header .right .languageWP:active::before {
 } */
 
 
-@-webkit-keyframes shiny {
+/* @-webkit-keyframes shiny {
     0% {
         left: 7px;
         top: 7px;
@@ -392,7 +393,7 @@ header .right .languageWP:active::before {
         height: 40px;
         opacity: 0.3;
     }
-}
+} */
 
 
 

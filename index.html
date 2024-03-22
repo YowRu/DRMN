@@ -4,6 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" id="metaDescription"
+        content="The Retail Media Broadcast Network (RMBN) is a media platform specifically designed for retailers. It efficiently delivers retailers' advertisements, promotions, and announcements to target consumers through a broadcasting network.">
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
@@ -250,7 +252,7 @@
             ({ key: "AIzaSyB2bfttufUwqEYfpe5jLF83FnVAMBUATEc", v: "weekly" });</script>
     <script>
         $(document).ready(function () {
-            
+
             let $H = $(window).height();
             let $W = $(window).width();
             //language
@@ -264,12 +266,20 @@
                     .then(data => {
                         translations = data;
                         updateElements();
-                      
+
                         if (newLang === 'zh.json') {
                             $('body').addClass('zh');
                         } else {
                             $('body').removeClass('zh');
                         }
+                        let description;
+                        if (nowLang != 'EN') {
+                            description = "The Retail Media Network (RMN) is a media platform specifically designed for retailers. It efficiently delivers retailers' advertisements, promotions, and announcements to target consumers through a broadcasting network.";
+                        } else  {
+                            description = "零售媒體聯播網專門為零售業者提供的媒體平台，通過聯播網絡的方式，將零售業者的廣告、活動、公告等資訊快速且有效地傳遞給目標消費者。";
+                        }
+                        // 更新 meta description
+                        $('#metaDescription').attr('content', description);
                     })
                     .catch(error => console.error('Error loading translations:', error));
             }

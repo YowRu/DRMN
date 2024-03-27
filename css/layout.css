@@ -8,7 +8,7 @@
 }
 
 /**/
-.headerCover {
+#headerCover {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -24,7 +24,7 @@
     height: 100%;
 }
 
-.headerCover .quote {
+#headerCover .quote {
     font-size: 28px;
     color: #fff;
     margin-bottom: -24px;
@@ -32,14 +32,14 @@
     font-size: 3rem;
 }
 
-.headerCover .quote .char {
+#headerCover .quote .char {
     display: inline-block;
     letter-spacing: 2px;
     font-weight: bolder;
     opacity: 0;
 }
 
-.headerCover .loadingBar {
+#headerCover .loadingBar {
     position: relative;
     margin-top: 20px;
     width: 100vw;
@@ -63,7 +63,7 @@
     }
 }
 
-.headerCover .loadingBar .loadingValue {
+#headerCover .loadingBar .loadingValue {
     position: absolute;
     /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#1dccfa+1,075aea+100 */
     background: linear-gradient(to right, #e2f9ff 1%, #9bbefa 100%);
@@ -114,7 +114,6 @@ body {
     padding: 0;
     width: 100%;
     min-width: 270px;
-    font-family: "Inter", sans-serif;
     font-weight: 400;
     color: #505561;
     position: relative;
@@ -130,6 +129,7 @@ header {
     padding: 3px 0;
     z-index: 3;
     transition: all 2s;
+    font-family: "Inter", sans-serif;
 }
 
 header .WP {
@@ -423,6 +423,14 @@ header.scroll .top a.login {
     color: #fff;
 }
 
+/*canvas*/
+canvas {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    z-index: -1;
+}
+
 /*goTop*/
 
 .goTop {
@@ -440,7 +448,7 @@ header.scroll .top a.login {
 /*main*/
 #main {
     width: 100%;
-    /* overflow-x: hidden; */
+    font-family: "Inter", sans-serif;
 }
 
 #main .banner {
@@ -451,8 +459,9 @@ header.scroll .top a.login {
     width: 100%;
     height: 100vh;
     margin: 0 auto;
-    background: url('../img/banner.webp') no-repeat center;
+    background: url('../img/banner.png') no-repeat center;
     background-size: cover;
+    position: relative;
 }
 
 .zh #main .banner p.en {
@@ -527,7 +536,7 @@ header.scroll .top a.login {
 
 #main .banner a:hover {
     color: #FFFFFF;
-    background-color: #1DA1F2;
+    background-color: #1d2ff2;
 }
 
 #main .row {
@@ -616,7 +625,7 @@ header.scroll .top a.login {
 }
 
 .zh #main p.title.white {
-    width: 288px;
+    width: auto;
 }
 
 #main p.title.bold {
@@ -1119,14 +1128,6 @@ header.scroll .top a.login {
 
     }
 
-    #main p.title.white {
-        width: auto;
-    }
-
-    .zh #main p.title.white {
-        width: 241px;
-    }
-
     #main .banner p.en {
         width: 621px;
         margin-top: 10px;
@@ -1146,7 +1147,7 @@ header.scroll .top a.login {
 }
 
 @media(max-width:800px) {
-    .headerCover .quote .char {
+    #headerCover .quote .char {
         font-size: 2rem;
     }
 
@@ -1451,7 +1452,7 @@ header.scroll .top a.login {
 }
 
 @media(max-width:500px) {
-    .headerCover .quote .char {
+    #headerCover .quote .char {
         font-size: 1.8rem;
     }
 
@@ -1484,10 +1485,6 @@ header.scroll .top a.login {
     #main p.title.white,
     #main #about p.title {
         font-size: 2rem;
-    }
-
-    .zh #main p.title.white {
-        width: auto;
     }
 
     #service {
@@ -1563,10 +1560,6 @@ header.scroll .top a.login {
 
     #product span {
         width: 90%;
-    }
-
-    #main p.title.white {
-        width: 167px;
     }
 
     .zh #main p.title.white {

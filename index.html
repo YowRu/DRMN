@@ -5,25 +5,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" id="metaDescription"
-        content="The Retail Media Broadcast Network (RMN) is a media platform specifically designed for retailers. It efficiently delivers retailers' advertisements, promotions, and announcements to target consumers through a broadcasting network.">
+        content="The Retail Media Broadcast Network (RMBN) is a media platform specifically designed for retailers. It efficiently delivers retailers' advertisements, promotions, and announcements to target consumers through a broadcasting network.">
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
     <script src="js/OwlCarousel2-2.3.4/dist/owl.carousel.min.js"></script>
-    <script src="https://unpkg.com/starback@2.1.1/dist/starback.global.js"></script>
     <link rel="icon" href="img/icon.ico">
     <link rel="stylesheet" href="js/OwlCarousel2-2.3.4/dist/assets/owl.carousel.css" type="text/css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Moon+Dance&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/layout.css" type="text/css">
     <title>Digital RMN</title>
 </head>
 
 <body>
-    <div id="headerCover">
+    <div class="headerCover">
         <div class="quote" id="quote" lang="welcome">Welcome</div>
         <div class="loadingBar">
             <div class="loadingValue"></div>
@@ -62,7 +58,6 @@
     </header>
     <div id="main">
         <div class="banner" id="banner">
-            <!-- <canvas id="canvas"></canvas> -->
             <p class="title white" lang="RMN">ABOUT US</p>
             <div>
                 <p class="en white" lang="description">We developed the world's first smart dragon station, which includes touch screens, capacitive touch, roll-up ribbons, and interchangeable battery modules, along with an integrated content management platform (CMS). This platform is suitable for chain stores, exhibitions, transportation centers, and more, effectively delivering marketing content and messages to the public.We provides a home media broadcasting platform for retailers, connecting media and single review, quickly delivering advertisements, activities, and announcements. The smart dragon station, combined with recognition systems, can collect and analyze information in public event areas, enhancing the value of traditional dragon poles.</p>
@@ -193,7 +188,7 @@
                         <img src="img/logo/tek.svg" />
                     </li>
                      <li data-aos="flip-left" data-aos-easing='ease-in' data-aos-duration="1000">
-                        <img src="img/logo/kepro.svg" />
+                        <img src="img/logo/KEPRO.svg" />
                     </li>
                     <li data-aos="flip-left" data-aos-easing='ease-in' data-aos-duration="1000">
                         <img src="img/logo/rcsa.svg" />
@@ -232,7 +227,7 @@
                         <img src="img/logo/yuan.svg" />
                     </li>
                     <li data-aos="flip-left" data-aos-easing='ease-in' data-aos-duration="1000">
-                        <img src="img/logo/kuo.svg" />
+                        <img src="img/logo/Kuo.svg" />
                     </li>
                     <li data-aos="flip-left" data-aos-easing='ease-in' data-aos-duration="1000">
                         <img src="img/logo/transportation.svg" />
@@ -293,7 +288,7 @@
     <img src="img/top_ic.svg" alt="" class="goTop">
 
     <script>(g => { var h, a, k, p = "The Google Maps JavaScript API", c = "google", l = "importLibrary", q = "__ib__", m = document, b = window; b = b[c] || (b[c] = {}); var d = b.maps || (b.maps = {}), r = new Set, e = new URLSearchParams, u = () => h || (h = new Promise(async (f, n) => { await (a = m.createElement("script")); e.set("libraries", [...r] + ""); for (k in g) e.set(k.replace(/[A-Z]/g, t => "_" + t[0].toLowerCase()), g[k]); e.set("callback", c + ".maps." + q); a.src = `https://maps.${c}apis.com/maps/api/js?` + e; d[q] = f; a.onerror = () => h = n(Error(p + " could not load.")); a.nonce = m.querySelector("script[nonce]")?.nonce || ""; m.head.append(a) })); d[l] ? console.warn(p + " only loads once. Ignoring:", g) : d[l] = (f, ...n) => r.add(f) && u().then(() => d[l](f, ...n)) })
-            ({ key: "AIzaSyB2bfttufUwqEYfpe5jLF83FnVAMBUATEc", v: "weekly" });</script>
+            ({ key: "AIzaSyBYTdnH_-xV629u55M6BshygNy_i8bwdU0", v: "weekly" });</script>
     <script>
         $(document).ready(function () {
 
@@ -343,7 +338,6 @@
                 loadTranslations(nowLang);
             });
 
-
             // 檢查 localStorage 中是否有存儲的語言喜好
             let storedLanguage = localStorage.getItem('language');
             if (storedLanguage) {
@@ -351,7 +345,6 @@
             } else {
                 loadTranslations('EN');
             }
-
 
             /*header*/
             let h = $('header .row1 .menu').height();
@@ -483,7 +476,6 @@
                 }
             });
 
-
             $('.banner').height($H);
 
             let oneH = $('#product .flex.one').height();
@@ -492,19 +484,6 @@
             setTimeout(function () {
                 $('a[href="#case"]').fadeIn().css('opacity', '1');
             }, 1000); // 1000 毫秒 = 1 秒
-
-
-            /*canvas*/
-        //     const canvas = document.getElementById('canvas');
-        // const starback = new Starback(canvas, {
-        //     type: 'dot',
-        //     quantity: 100,
-        //     direction: 225,
-        //     // linear-gradient(-45deg, #41D6FE, #1DA1F2, #332DFD);
-        //     backgroundColor: ['#1DA1F2', '#332DFD'],
-        //     randomOpacity: true,
-        // });
-
 
             //bar
             const quote = document.getElementById('quote');
@@ -516,12 +495,12 @@
             headerCover.to(".loadingValue", 2, { width: "100%" })
                 .to(".loadingBar", 0.1, { display: 'none' })
                 .to(".quote", 0.1, { display: 'none' })
-                .to("#headerCover", 0.5, {
+                .to(".headerCover", 0.5, {
                     opacity: 0, onComplete: function () {
                         // 在淡出完成後可能需要額外的操作
                         // 可以在 onComplete 函數中添加
                         // 例如：將元素的 display 屬性設置為 'none'
-                        gsap.set("#headerCover", { display: 'none' });
+                        gsap.set(".headerCover", { display: 'none' });
                     }
                 });
 
@@ -571,7 +550,7 @@
             let map;
             async function initMap() {
                 const script = document.createElement('script');
-                script.src = `https://maps.googleapis.com/maps/api/js?key=AIzaSyB2bfttufUwqEYfpe5jLF83FnVAMBUATEc&libraries=places`;
+                script.src = `https://maps.googleapis.com/maps/api/js?key=AIzaSyBYTdnH_-xV629u55M6BshygNy_i8bwdU0&libraries=places`;
                 script.defer = true;
                 document.head.appendChild(script);
 

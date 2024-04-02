@@ -549,6 +549,7 @@
             //map
             let map;
             async function initMap() {
+                // const { Map } = await google.maps.importLibrary("maps");
                 const script = document.createElement('script');
                 script.src = `https://maps.googleapis.com/maps/api/js?key=AIzaSyBYTdnH_-xV629u55M6BshygNy_i8bwdU0&libraries=places`;
                 script.defer = true;
@@ -559,6 +560,7 @@
                     const myLatLng = { lat: 25.067070389136372, lng: 121.52368578322084 };
 
                     map = new google.maps.Map(document.getElementById("map"), {
+                        // map = new Map(document.getElementById("map"), {
                         center: myLatLng,
                         zoom: 17,
                     });

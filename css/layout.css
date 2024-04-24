@@ -1,6 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Atomic+Age&family=Inter:wght@100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Moon+Dance&family=Noto+Sans+TC:wght@300&family=Noto+Serif+TC&family=Playfair+Display:wght@400;700&display=swap');
-
 
 * {
     margin: 0;
@@ -8,6 +6,11 @@
 }
 
 /**/
+@font-face {
+    font-family: 'Moon Dance';
+    src: url('../font/MoonDance-Regular.ttf') format('truetype');
+}
+
 #headerCover {
     display: flex;
     justify-content: center;
@@ -24,15 +27,14 @@
     height: 100%;
 }
 
-#headerCover .quote {
-    font-size: 28px;
+#headerCover #quote {
     color: #fff;
     margin-bottom: -24px;
-    font-family: 'Moon Dance';
+    font-family: "Moon Dance";
     font-size: 3rem;
 }
 
-#headerCover .quote .char {
+#headerCover #quote .char {
     display: inline-block;
     letter-spacing: 2px;
     font-weight: bolder;
@@ -74,11 +76,7 @@
     height: 10px;
 }
 
-
-
 /**/
-
-
 body ul,
 body ol,
 body li {
@@ -126,9 +124,9 @@ header {
     position: fixed;
     top: 0;
     left: 0;
-    padding: 3px 0;
+    padding: 16px 0;
     z-index: 3;
-    transition: all 2s;
+    transition: all 1s;
     font-family: "Inter", sans-serif;
 }
 
@@ -222,6 +220,11 @@ header .menu .close.animation {
     animation-duration: 1.5s;
 }
 
+header .menu .close.back {
+    animation-name: rotateBack;
+    animation-duration: 1.5s;
+}
+
 @keyframes Xrotate {
     from {
         transform: rotate(0deg);
@@ -229,6 +232,16 @@ header .menu .close.animation {
 
     to {
         transform: rotate(270deg);
+    }
+}
+
+@keyframes rotateBack {
+    from {
+        transform: rotate(90deg);
+    }
+
+    to {
+        transform: rotate(0deg);
     }
 }
 
@@ -411,9 +424,6 @@ header .right .languageWP:active::before {
     }
 } */
 
-
-
-
 header .right a.black {
     color: rgb(124, 124, 124);
 }
@@ -432,7 +442,6 @@ canvas {
 }
 
 /*goTop*/
-
 .goTop {
     width: 50px;
     cursor: pointer;
@@ -445,30 +454,53 @@ canvas {
     display: none;
 }
 
+#main #carousel3 {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+}
+
 /*main*/
 #main {
     width: 100%;
     font-family: "Inter", sans-serif;
+    position: relative;
+}
+
+#main .bannerText {
+    width: 80%;
+    height: 100vh;
+    margin: 0 auto;
+    position: absolute;
+    top: 0;
+    left: 10%;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
 }
 
 #main .banner {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     width: 100%;
     height: 100vh;
     margin: 0 auto;
-    background: url('../img/banner.png') no-repeat center;
+    background: url('../img/bannerV3.png') no-repeat center;
     background-size: cover;
     position: relative;
 }
 
-.zh #main .banner p.en {
+.zh #main .bannerText p.en {
     height: auto;
 }
 
-#main .banner p {
+#main .bannerText p {
     font-size: 24px;
     line-height: 2rem;
     color: #fff;
@@ -476,22 +508,25 @@ canvas {
     margin-top: 20px;
 }
 
-#main .banner p.en {
-    max-width: 1500px;
-    width: 1000px;
-    margin: 30px auto 0;
+#main .bannerText p.en {
+    width: 50%;
+    margin: 30px 0;
     font-size: 1.15rem;
     color: #fff;
     text-align: left;
 }
 
-#main .banner p.title {
+#main .bannerText p.title.white {
     font-size: 3rem;
     color: #fff;
     font-weight: 700;
+    text-align: left;
+    width: 30%;
+    line-height: normal;
+    margin: 0;
 }
 
-#main .banner p.title span {
+#main .bannerText p.title span {
     width: 14px;
     height: 14px;
     border-radius: 50%;
@@ -501,7 +536,7 @@ canvas {
     top: -14px;
 }
 
-#main .banner p.title span::before {
+#main .bannerText p.title span::before {
     content: '';
     display: block;
     width: 6px;
@@ -511,10 +546,9 @@ canvas {
     top: 4px;
     background-color: #fff;
     border-radius: 50%;
-
 }
 
-#main .banner a {
+#main .bannerText a {
     height: 52px;
     border-radius: 26px;
     background-color: #25c1ed;
@@ -522,7 +556,7 @@ canvas {
     line-height: 52px;
     color: #fff;
     font-size: 15px;
-    margin: 58px auto 0;
+    margin: 58px 0 0 0;
     position: relative;
     transition: all .8s;
     display: block;
@@ -530,13 +564,43 @@ canvas {
     opacity: 0;
 }
 
-.zh #main .banner a {
+.zh #main .bannerText a {
     width: 66px;
 }
 
-#main .banner a:hover {
+#main .bannerText a:hover {
     color: #FFFFFF;
     background-color: #1d2ff2;
+}
+
+#main .slider {
+    width: 50vw;
+    height: 100vh;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: -1;
+}
+
+#main .slider img {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    object-position: top;
+}
+
+#main .slider img.four {
+    object-position: 100% 55%;
+}
+
+#main .slider img.six {
+    width: 146%;
+    height: 126vh;
+    object-position: 110% 100%;
+}
+
+#main .slider img.seven {
+    object-position: 43% 100%;
 }
 
 #main .row {
@@ -601,8 +665,6 @@ canvas {
 #main .flex p img {
     width: 80px;
 }
-
-
 
 #main p.left {
     text-align: left;
@@ -836,7 +898,8 @@ canvas {
     display: block;
 }
 
-#case .logoWp .flex img.Width50, #case .Width50 {
+#case .logoWp .flex img.Width50,
+#case .Width50 {
     width: 50%;
     height: 400px;
 }
@@ -981,23 +1044,25 @@ canvas {
     .goTop {
         right: 12%;
     }
+}
 
+@media(max-width:2600px) {
+    header .right a {
+        text-shadow: -.5px 0 #1d2ff2, 0 .5px #1d2ff2, .5px 0 #1d2ff2, 0 -.5px #1d2ff2;
+    }
 }
 
 @media(max-width:1500px) {
-
     .goTop {
         right: 20px;
-        bottom: 10px;
+        bottom: 20px;
     }
-
 }
 
 @media(max-width:1400px) {
     #main .flex {
         width: 90%;
     }
-
 }
 
 @media (max-width:1290px) {
@@ -1008,7 +1073,6 @@ canvas {
 }
 
 @media(max-width:1280px) {
-
     #case .logoWp .flex li {
         width: 24%;
     }
@@ -1019,12 +1083,15 @@ canvas {
         justify-content: space-around;
     }
 
+    #main .slider img.two {
+        object-position: top right;
+    }
 }
 
 @media (max-width:1080px) {
 
     header {
-        padding: 5px 0;
+        padding: 10px 0;
         box-sizing: border-box;
     }
 
@@ -1032,15 +1099,12 @@ canvas {
         width: 100%;
     }
 
-    #main .banner p.en {
-        width: 90%;
-    }
-
     #case .logoWp .flex li {
         width: 30%;
     }
 
-    #contact .right, #contact .left {
+    #contact .right,
+    #contact .left {
         width: 50%;
     }
 
@@ -1058,6 +1122,10 @@ canvas {
 }
 
 @media (max-width:1000px) {
+    #main .slider img.two {
+        object-position: 90% 0;
+    }
+
     #main .flex {
         width: 90%;
     }
@@ -1089,12 +1157,24 @@ canvas {
 }
 
 @media(max-width:900px) {
-    #main .banner {
-        min-height: 800px;
+    #main .slider img.four {
+        object-position: 8% 55%;
     }
 
-    #main .banner p.en {
-        width: 714px;
+    #main .slider img.five {
+        object-position: 65%;
+    }
+
+    #main .slider img.eight {
+        object-position: 47%;
+    }
+
+    #main .slider img.nine {
+        object-position: 90%;
+    }
+
+    #main .banner {
+        min-height: 800px;
     }
 
     #main .banner .left {
@@ -1113,8 +1193,6 @@ canvas {
         width: 96%;
     }
 
-
-
     #product .flex .item {
         width: 30%;
     }
@@ -1122,13 +1200,13 @@ canvas {
 
 @media(max-width:850px) {
 
-    #main .banner p.title,
+    #main .bannerText p.title,
     #main p.title {
         font-size: 2.5rem;
 
     }
 
-    #main .banner p.en {
+    #main .bannerText p.en {
         width: 621px;
         margin-top: 10px;
     }
@@ -1147,8 +1225,31 @@ canvas {
 }
 
 @media(max-width:800px) {
-    #headerCover .quote .char {
+    #headerCover #quote .char {
         font-size: 2rem;
+    }
+
+    #main .slider img.five {
+        object-position: 71%;
+    }
+
+    #main .slider img.six {
+        width: 100%;
+        height: 100vh;
+        object-fit: cover;
+        object-position: top;
+    }
+
+    #main .slider img {
+        object-position: 59%;
+    }
+
+    #main .slider .item:nth-child(even) img {
+        object-position: top 10px;
+    }
+
+    #main .slider .item:nth-child(even) img.nine {
+        object-position: center right;
     }
 
     header {
@@ -1190,7 +1291,7 @@ canvas {
 
     header .left a {
         width: 250px;
-        margin: 0 auto;
+        margin: 3px auto;
         height: 50px;
     }
 
@@ -1209,7 +1310,7 @@ canvas {
         height: 40px;
     }
 
-    #main .banner p.en {
+    #main .bannerText p.en {
         width: 536px;
     }
 
@@ -1224,7 +1325,8 @@ canvas {
         align-items: center;
     }
 
-    #contact .right, #contact .left {
+    #contact .right,
+    #contact .left {
         width: 90%;
     }
 
@@ -1234,7 +1336,38 @@ canvas {
 }
 
 @media(max-width:700px) {
-    #about, #banner, #product, #service, #case {
+    #main .slider {
+        display: none;
+    }
+
+    #main .banner {
+        background: url('../img/bannerV2.png') no-repeat center;
+        background-size: cover;
+        position: relative;
+    }
+
+    #main #carousel3 {
+        display: block;
+    }
+
+    #main .banner::before {
+        content: '';
+        display: block;
+        background: url('../img/bannerM/deviceM.png') no-repeat center;
+        background-size: contain;
+        position: absolute;
+        top: 3vw;
+        right: -18vw;
+        width: 87vw;
+        height: 100vh;
+        z-index: 1;
+    }
+
+    #about,
+    #banner,
+    #product,
+    #service,
+    #case {
         width: 100vw;
         overflow-x: hidden;
     }
@@ -1287,6 +1420,40 @@ canvas {
     }
 }
 
+@media (max-width:650px) {
+    #main .banner::before {
+        content: '';
+        display: block;
+        background: url('../img/bannerM/deviceM.png') no-repeat center;
+        background-size: contain;
+        position: absolute;
+        top: 19px;
+        right: -19vw;
+        width: 100vw;
+        height: 100vh;
+        z-index: 1;
+    }
+
+    #main .slider img {
+        object-position: 61%;
+    }
+}
+
+@media (max-width:630px) {
+    #main .banner::before {
+        content: '';
+        display: block;
+        background: url('../img/bannerM/deviceM.png') no-repeat center;
+        background-size: contain;
+        position: absolute;
+        top: 19px;
+        right: -27vw;
+        width: 100vw;
+        height: 100vh;
+        z-index: 1;
+    }
+
+}
 
 @media(max-width:600px) {
     header .left a {
@@ -1297,8 +1464,21 @@ canvas {
         top: 184px;
     }
 
-    #main .banner p.en {
+    #main .bannerText p.en {
         width: 500px;
+    }
+
+    #main .banner::before {
+        content: '';
+        display: block;
+        background: url('../img/bannerM/deviceM.png') no-repeat center;
+        background-size: contain;
+        position: absolute;
+        top: 19px;
+        right: -29vw;
+        width: 100vw;
+        height: 100vh;
+        z-index: 1;
     }
 
     #main .flex.mobile {
@@ -1349,8 +1529,11 @@ canvas {
 }
 
 @media(max-width:550px) {
+    #main .banner::before,#main #carousel3 {
+        display: none;
+    }
 
-    #main .banner p.en {
+    #main .bannerText p.en {
         width: 450px;
         font-size: .95rem;
         margin-bottom: 44px;
@@ -1361,12 +1544,12 @@ canvas {
         font-size: .95rem;
     }
 
-    #main .banner p.title span {
+    #main .bannerText p.title span {
         top: 0;
         margin: 0 8px;
     }
 
-    #main .banner p {
+    #main .bannerText p {
         font-size: .7rem;
     }
 
@@ -1452,7 +1635,7 @@ canvas {
 }
 
 @media(max-width:500px) {
-    #headerCover .quote .char {
+    #headerCover #quote .char {
         font-size: 1.8rem;
     }
 
@@ -1460,7 +1643,7 @@ canvas {
         justify-content: center;
     }
 
-    #main .banner p.en {
+    #main .bannerText p.en {
         width: 414px;
     }
 
@@ -1502,7 +1685,7 @@ canvas {
         height: 67px;
     }
 
-    #main .banner p.en {
+    #main .bannerText p.en {
         width: 350px;
     }
 
@@ -1566,7 +1749,7 @@ canvas {
         font-size: 2rem;
     }
 
-    #main .banner p.en,
+    #main .bannerText p.en,
     #main p.description,
     #main .flex span {
         font-size: .85rem;
@@ -1600,7 +1783,7 @@ canvas {
 }
 
 @media(max-width:375px) {
-    #main .banner p.en {
+    #main .bannerText p.en {
         width: 320px;
     }
 }

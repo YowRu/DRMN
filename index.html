@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" id="metaDescription"
-        content="The Retail Media Broadcast Network (RMBN) is a media platform specifically designed for retailers. It efficiently delivers retailers' advertisements, promotions, and announcements to target consumers through a broadcasting network.">
+        content="The Retail Media Network (RMN) is a media platform specifically designed for retailers. It efficiently delivers retailers' advertisements, promotions, and announcements to target consumers through a broadcasting network.">
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
@@ -19,8 +19,8 @@
 </head>
 
 <body>
-    <div class="headerCover">
-        <div class="quote" id="quote" lang="welcome">Welcome</div>
+    <div id="headerCover">
+        <div id="quote" lang="welcome">Welcome</div>
         <div class="loadingBar">
             <div class="loadingValue"></div>
         </div>
@@ -57,12 +57,30 @@
         <div class="bg"></div>
     </header>
     <div id="main">
-        <div class="banner" id="banner">
-            <p class="title white" lang="RMN">ABOUT US</p>
+        <div class="bannerText">
+            <p class="title white" lang="RMN">Let’s Improve advertising effectiveness</p>
             <div>
-                <p class="en white" lang="description">We developed the world's first smart dragon station, which includes touch screens, capacitive touch, roll-up ribbons, and interchangeable battery modules, along with an integrated content management platform (CMS). This platform is suitable for chain stores, exhibitions, transportation centers, and more, effectively delivering marketing content and messages to the public.We provides a home media broadcasting platform for retailers, connecting media and single review, quickly delivering advertisements, activities, and announcements. The smart dragon station, combined with recognition systems, can collect and analyze information in public event areas, enhancing the value of traditional dragon poles.</p>
+                <p class="en white" lang="description">We leverage the power of location, creative, and smart audience
+                    data to drive meaningful connections between brands and audiences in the real world with out of home
+                    advertising.</p>
                 <a href="#case" lang="more">learn more</a>
             </div>
+        </div>
+        <div class="banner" id="banner"></div>
+        <div class="slider owl-carousel owl-theme" id="carousel1">
+            <div class="item"><img src="img/slider/S__1.jpg" /></div>
+            <div class="item"><img src="img/slider/S__2.png" class="two"/></div>
+            <div class="item"><img src="img/slider/S__4.jpg" class="four"/></div>
+            <div class="item"><img src="img/slider/S__5.jpg" class="five"/></div>
+            <div class="item"><img src="img/slider/S__6.jpg" class="six"/></div>
+            <div class="item"><img src="img/slider/S__7.png" class="seven"/></div>
+            <div class="item"><img src="img/slider/S__8.png" class="eight"/></div>
+            <div class="item"><img src="img/slider/S__9.jpg" class="nine"/></div>
+        </div>
+        <div class="slider owl-carousel owl-theme" id="carousel3">
+            <div class="item"><img src="img/bannerM/1.png" /></div>
+            <div class="item"><img src="img/bannerM/2.png"/></div>
+            <div class="item"><img src="img/bannerM/3.png"/></div>
         </div>
         <div id="about">
             <div class="row row1">
@@ -187,7 +205,7 @@
                     <li data-aos="flip-left" data-aos-easing='ease-in' data-aos-duration="1000">
                         <img src="img/logo/tek.svg" />
                     </li>
-                     <li data-aos="flip-left" data-aos-easing='ease-in' data-aos-duration="1000">
+                    <li data-aos="flip-left" data-aos-easing='ease-in' data-aos-duration="1000">
                         <img src="img/logo/kepro.svg" />
                     </li>
                     <li data-aos="flip-left" data-aos-easing='ease-in' data-aos-duration="1000">
@@ -241,7 +259,7 @@
                 </ul>
             </div>
         </div>
-        <div class="owl-carousel">
+        <div class="owl-carousel owl-theme" id="carousel2">
             <div class="item"><img src="img/case/C7_1.png" /></div>
             <div class="item"><img src="img/case/C7_2.jpg" /></div>
             <div class="item"><img src="img/case/C7_3.jpg" /></div>
@@ -287,13 +305,30 @@
     </div>
     <img src="img/top_ic.svg" alt="" class="goTop">
 
-    <script>(g => { var h, a, k, p = "The Google Maps JavaScript API", c = "google", l = "importLibrary", q = "__ib__", m = document, b = window; b = b[c] || (b[c] = {}); var d = b.maps || (b.maps = {}), r = new Set, e = new URLSearchParams, u = () => h || (h = new Promise(async (f, n) => { await (a = m.createElement("script")); e.set("libraries", [...r] + ""); for (k in g) e.set(k.replace(/[A-Z]/g, t => "_" + t[0].toLowerCase()), g[k]); e.set("callback", c + ".maps." + q); a.src = `https://maps.${c}apis.com/maps/api/js?` + e; d[q] = f; a.onerror = () => h = n(Error(p + " could not load.")); a.nonce = m.querySelector("script[nonce]")?.nonce || ""; m.head.append(a) })); d[l] ? console.warn(p + " only loads once. Ignoring:", g) : d[l] = (f, ...n) => r.add(f) && u().then(() => d[l](f, ...n)) })
-            ({ key: "AIzaSyBYTdnH_-xV629u55M6BshygNy_i8bwdU0", v: "weekly" });</script>
     <script>
+        function initMap() {
+            // 確保地圖元素存在
+            if (document.getElementById('map')) {
+                const myLatLng = { lat: 25.067070389136372, lng: 121.52368578322084 };
+
+                const map = new google.maps.Map(document.getElementById("map"), {
+                    center: myLatLng,
+                    mapId: 'd1c5bf3532fbaeda',
+                    zoom: 17,
+                });
+                let marker = new google.maps.Marker({
+                    position: myLatLng,
+                    map,
+                    title: '地圖標記'
+                });
+            }
+        }
+
         $(document).ready(function () {
 
             let $H = $(window).height();
             let $W = $(window).width();
+
             //language
             let translations = {};
 
@@ -314,7 +349,7 @@
                         let description;
                         if (nowLang != 'EN') {
                             description = "The Retail Media Network (RMN) is a media platform specifically designed for retailers. It efficiently delivers retailers' advertisements, promotions, and announcements to target consumers through a broadcasting network.";
-                        } else  {
+                        } else {
                             description = "零售媒體聯播網專門為零售業者提供的媒體平台，通過聯播網絡的方式，將零售業者的廣告、活動、公告等資訊快速且有效地傳遞給目標消費者。";
                         }
                         // 更新 meta description
@@ -393,16 +428,17 @@
                         'marginLeft': 320,
                     }, 500);
                 }
-                $('header .menu .close').addClass('animation');
+                $('header .menu .close').removeClass('back').addClass('animation');
                 $('header .bg').show();
                 $('body').css('overflow', 'hidden');
             });
             $('header .menu .close').click(function () {
+                $('header .menu .close').removeClass('animation').addClass('back');
                 $('header .menu').animate({
                     'marginLeft': 0
-                }, 500);
+                }, 800);
                 $('body').css('overflow-y', 'auto');
-                $('header .menu .close').removeClass('animation');
+                
                 $('header .bg').hide();
             });
 
@@ -494,30 +530,50 @@
             const headerCover = gsap.timeline();
             headerCover.to(".loadingValue", 2, { width: "100%" })
                 .to(".loadingBar", 0.1, { display: 'none' })
-                .to(".quote", 0.1, { display: 'none' })
-                .to(".headerCover", 0.5, {
+                .to("#quote", 0.1, { display: 'none' })
+                .to("#headerCover", 0.5, {
                     opacity: 0, onComplete: function () {
                         // 在淡出完成後可能需要額外的操作
                         // 可以在 onComplete 函數中添加
                         // 例如：將元素的 display 屬性設置為 'none'
-                        gsap.set(".headerCover", { display: 'none' });
+                        gsap.set("#headerCover", { display: 'none' });
                     }
                 });
 
+
+                
             // 預先加載背景圖
             var img = new Image();
             img.onload = function () {
                 // 圖片加載完成後顯示 banner
                 document.getElementById('banner').style.display = 'flex';
             };
-            img.src = 'img/banner.webp'; // 背景圖片的 URL
+            img.src = 'img/bannerV3.png'; // 背景圖片的 URL
 
             //animation
             AOS.init();
 
+            //silder
+            $('#carousel1').owlCarousel({
+                items: 1,
+                loop: true,
+                margin: 10,
+                autoplay: true,
+                autoplayTimeout: 3000,
+                autoplayHoverPause: true
+            });
+
+            $('#carousel3').owlCarousel({
+                items: 1,
+                loop: true,
+                margin: 10,
+                autoplay: true,
+                autoplayTimeout: 3000,
+                autoplayHoverPause: true
+            });
+
             //Carousel
-            let owl = $('.owl-carousel');
-            owl.owlCarousel({
+            $('#carousel2').owlCarousel({
                 items: 6,
                 loop: true,
                 margin: 10,
@@ -541,44 +597,11 @@
                         items: 6
                     }
                 },
-                autoplay: true,
-                autoplayTimeout: 2000,
+                autoplay: false,
+                nav: true, // 啟用箭頭
+                dots: false, // 啟用圓點
                 autoplayHoverPause: true
             });
-
-            //map
-            let map;
-            async function initMap() {
-                // const { Map } = await google.maps.importLibrary("maps");
-                const script = document.createElement('script');
-                script.src = `https://maps.googleapis.com/maps/api/js?key=AIzaSyBYTdnH_-xV629u55M6BshygNy_i8bwdU0&libraries=places`;
-                script.defer = true;
-                document.head.appendChild(script);
-
-                script.onload = () => {
-                    // 等待地圖 API 載入完畢再初始化地圖
-                    const myLatLng = { lat: 25.067070389136372, lng: 121.52368578322084 };
-
-                    map = new google.maps.Map(document.getElementById("map"), {
-                        // map = new Map(document.getElementById("map"), {
-                        center: myLatLng,
-                        mapId:'d1c5bf3532fbaeda',
-                        zoom: 17,
-                    });
-
-                    let marker = new google.maps.Marker({
-                        position: myLatLng,
-                        map: map,
-                        title: '地圖標記'
-                    });
-                };
-
-                script.onerror = () => {
-                    console.error("Google Maps JavaScript API 加載失敗");
-                };
-            }
-
-            initMap();
 
             //goTop
             $(window).scroll(function () {
@@ -591,6 +614,66 @@
             $('.goTop').click(function () {
                 $('html,body').animate({ scrollTop: 0 }, 1000);
             });
+            //map
+            (function (g) {
+                var h, a, k, p = "The Google Maps JavaScript API", c = "google", l = "importLibrary", q = "__ib__", m = document, b = window;
+                b = b[c] || (b[c] = {});
+                var d = b.maps || (b.maps = {}), r = new Set, e = new URLSearchParams, u = () => h || (h = new Promise(async (f, n) => {
+                    await (a = m.createElement("script"));
+                    e.set("libraries", [...r] + "");
+                    for (k in g) e.set(k.replace(/[A-Z]/g, t => "_" + t[0].toLowerCase()), g[k]);
+                    e.set("callback", c + ".maps." + q);
+                    a.src = `https://maps.${c}apis.com/maps/api/js?` + e;
+                    d[q] = f;
+                    a.onerror = () => h = n(Error(p + " could not load."));
+                    a.nonce = m.querySelector("script[nonce]")?.nonce || "";
+                    m.head.append(a);
+                }));
+                d[l] ? console.warn(p + " only loads once. Ignoring:", g) : d[l] = (f, ...n) => r.add(f) && u().then(() => d[l](f, ...n));
+            })({ key: "AIzaSyBYTdnH_-xV629u55M6BshygNy_i8bwdU0", v: "weekly" });
+
+            let map;
+            async function initMap() {
+                const script = document.createElement('script');
+                script.src = `https://maps.googleapis.com/maps/api/js?key=AIzaSyBYTdnH_-xV629u55M6BshygNy_i8bwdU0&callback=initMap&libraries=places`;
+                script.defer = true;
+                document.head.appendChild(script);
+                const { Map } = await google.maps.importLibrary("maps");
+                const { AdvancedMarkerView } = await google.maps.importLibrary("marker");
+
+                script.onload = () => {
+                    // 等待地圖 API 載入完畢再初始化地圖
+                    const myLatLng = { lat: 25.067070389136372, lng: 121.52368578322084 };
+
+                    map = new google.maps.Map(document.getElementById("map"), {
+                        center: myLatLng,
+                        mapId: 'd1c5bf3532fbaeda',
+                        zoom: 17,
+                    });
+
+                    let marker = new google.maps.marker.AdvancedMarkerElement({
+                        position: myLatLng,
+                        map,
+                        title: '地圖標記'
+                    });
+                };
+
+                script.onerror = () => {
+                    console.error("Google Maps JavaScript API 加載失敗");
+                };
+
+            }
+            // const script = document.createElement('script');
+            // script.src = `https://maps.googleapis.com/maps/api/js?key=AIzaSyBYTdnH_-xV629u55M6BshygNy_i8bwdU0&callback=initMap&libraries=places`;
+            // script.defer = true;
+            // document.head.appendChild(script);
+
+            // script.onerror = () => {
+            //     console.error("Google Maps JavaScript API 加載失敗");
+            // };
+            initMap();
+
+
         });
     </script>
 </body>

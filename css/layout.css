@@ -1345,7 +1345,9 @@ canvas {
         background-size: cover;
         position: relative;
     }
-
+    #main .bannerText p.en {
+        width: 45vw;
+    }
     #main #carousel3 {
         display: block;
     }
